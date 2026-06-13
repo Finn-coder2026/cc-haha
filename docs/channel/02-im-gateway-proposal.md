@@ -1,23 +1,12 @@
 # IM Gateway 方案设计 `[历史设计稿]`
-
 > 像 OpenClaw 一样，让 Claude Code Desktop 快速接入任意 IM 平台
 >
-> 状态更新：当前实际可用的接入方式请看 [`docs/im/`](../im/)。
+> 状态更新：当前实际可用的接入方式请看 [docs/im/](../im/)。
 > 本文保留为方案演进记录，不再作为接入说明。
 
-<p align="center">
-<a href="#一背景与动机">背景</a> ·
-<a href="#二openclaw-参考分析">OpenClaw</a> ·
-<a href="#三方案设计">方案</a> ·
-<a href="#四消息协议">协议</a> ·
-<a href="#五消息流详解">消息流</a> ·
-<a href="#六adapter-实现">Adapter</a> ·
-<a href="#七文件清单">文件清单</a> ·
-<a href="#八验证方案">验证</a> ·
-<a href="#九与-openclaw-对比">对比</a> ·
-<a href="#十开放问题">开放问题</a>
-</p>
+阿斯达当升科技上课了飞机
 
+[背景](#一背景与动机) · [OpenClaw](#二openclaw-参考分析) · [方案](#三方案设计) · [协议](#四消息协议) · [消息流](#五消息流详解) · [Adapter](#六adapter-实现) · [文件清单](#七文件清单) · [验证](#八验证方案) · [对比](#九与-openclaw-对比) · [开放问题](#十开放问题)
 ---
 
 ## 一、背景与动机
@@ -45,16 +34,12 @@ Claude Code 源码中已有完整的 **Channel 系统**（详见 [01-channel-sys
 
 ---
 
+
 ## 二、OpenClaw 参考分析
-
 [OpenClaw](https://github.com/openclaw/openclaw) 是 GitHub 上 351k+ star 的开源 AI 助手项目，其最大特色是 IM 集成。
-
 ### 支持的 IM 平台（23+）
-
 WhatsApp、Telegram、Slack、Discord、Google Chat、Signal、iMessage、IRC、Microsoft Teams、Matrix、飞书（Feishu）、LINE、Mattermost、Nextcloud Talk、Nostr、Synology Chat、Tlon、Twitch、Zalo、微信（WeChat）、WebChat 等。
-
 ### 架构模式
-
 ```
 IM 平台 (Telegram / WeChat / Slack / ...)
                |
@@ -70,18 +55,13 @@ IM 平台 (Telegram / WeChat / Slack / ...)
                ├── WebChat UI
                └── 移动端 App
 ```
-
 ### 关键设计
-
 - **Gateway 是控制面**：所有 IM 消息通过 Gateway 路由到 AI Agent
 - **Adapter 模式**：每个 IM 平台一个独立 Adapter，连接到 Gateway
 - **多用户隔离**：不同用户/聊天对应不同 Agent 会话
 - **安全机制**：DM 配对码验证未知发送者
-
 ### 中国 IM 生态
-
 社区插件仓库 `openclaw-china` 额外支持：飞书、钉钉、QQ、企业微信。
-
 ---
 
 ## 三、方案设计
@@ -141,10 +121,9 @@ MCP Channel 系统设计用于 CLI 交互模式（React/Ink 渲染），需要�
 
 ---
 
+
 ## 四、消息协议
-
 ### Adapter -> Gateway
-
 ```typescript
 // 注册
 { type: 'register'; platform: string; adapterId: string; secret?: string }
@@ -161,9 +140,7 @@ MCP Channel 系统设计用于 CLI 交互模式（React/Ink 渲染），需要�
 // 新建会话（用户 /new 命令）
 { type: 'new_session'; chatId: string }
 ```
-
 ### Gateway -> Adapter
-
 ```typescript
 // 注册确认
 { type: 'registered'; adapterId: string }
@@ -201,7 +178,6 @@ MCP Channel 系统设计用于 CLI 交互模式（React/Ink 渲染），需要�
 // 完成
 { type: 'complete'; chatId: string; usage: { input_tokens: number; output_tokens: number } }
 ```
-
 ---
 
 ## 五、消息流详解
@@ -249,10 +225,9 @@ CLI 发送 control_request:
 
 ---
 
+
 ## 六、Adapter 实现
-
 ### 目录结构
-
 ```
 adapters/
   telegram/
@@ -271,9 +246,7 @@ adapters/
     index.ts        — 微信 Adapter（基于 wechaty）
     package.json
 ```
-
 ### Telegram Adapter 示例
-
 ```typescript
 // 伪代码 — 核心逻辑
 import { Telegraf } from 'telegraf'
@@ -324,22 +297,19 @@ bot.on('callback_query', (ctx) => {
   }))
 })
 ```
-
 ### 飞书 Adapter 要点
-
 - 使用飞书事件订阅（HTTP 回调模式）接收消息
 - 权限请求使用**交互式卡片**（Message Card），按钮体验更好
 - 支持富文本回复
-
 ### 各平台消息限制
 
-| 平台 | 消息长度限制 | 处理方式 |
-|------|------------|---------|
-| Telegram | 4096 字符 | 自动分段发送 |
-| 飞书 | 无硬限制（建议 < 30KB） | 长消息可折叠 |
-| Slack | 40000 字符 | 分 Block 发送 |
-| Discord | 2000 字符 | 分段 + Embed |
-| 微信 | 2048 字符 | 分段发送 |
+| 平台       | 消息长度限制             | 处理方式       |
+| -------- | ------------------ | ---------- |
+| Telegram | 4096 字符            | 自动分段发送     |
+| 飞书       | 无硬限制（建议 < 30KB） | 长消息可折叠     |
+| Slack    | 40000 字符           | 分 Block 发送 |
+| Discord  | 2000 字符            | 分段 + Embed |
+| 微信       | 2048 字符            | 分段发送       |
 
 ---
 
@@ -391,10 +361,9 @@ bot.on('callback_query', (ctx) => {
 
 ---
 
+
 ## 八、验证方案
-
 ### 1. WebSocket 连通性测试
-
 ```bash
 # 启动服务器
 bun run server
@@ -407,9 +376,7 @@ wscat -c ws://localhost:3456/im/test-adapter
 > {"type":"im_message","chatId":"chat-1","userId":"user-1","content":"hello"}
 # 期望收到: 一系列 text/thinking/status/complete 消息
 ```
-
 ### 2. Telegram 端到端测试
-
 1. 创建 Telegram Bot（@BotFather）
 2. 配置 Bot Token 到 Adapter
 3. 启动服务器 + Telegram Adapter
@@ -418,19 +385,14 @@ wscat -c ws://localhost:3456/im/test-adapter
 6. 发送 "读取 package.json" 触发工具调用
 7. 验证权限请求按钮出现
 8. 点击允许，验证工具执行和结果返回
-
 ### 3. 多会话隔离测试
-
 - 从不同 Telegram 聊天发消息，验证会话独立
 - 发送 `/new` 命令，验证新会话创建
 - 验证旧会话不受影响
-
 ### 4. 异常场景测试
-
 - Adapter 断开重连，验证会话恢复
 - CLI 进程崩溃，验证错误消息发送到 IM
 - 权限请求超时，验证优雅处理
-
 ---
 
 ## 九、与 OpenClaw 对比
@@ -461,46 +423,34 @@ wscat -c ws://localhost:3456/im/test-adapter
 
 ---
 
+
 ## 十、开放问题
-
 > 以下问题在实现前需要进一步思考和决策。
-
 ### 10.1 安全性
-
 - Adapter 连接到 Gateway 时是否需要认证？（shared secret / API key）
 - 如何防止未授权的 IM 用户与 Claude 对话？（allowedUsers 白名单是否足够？）
 - 是否需要 IP 白名单或 Tailscale 等网络层隔离？
-
 ### 10.2 多用户 / 多项目
-
 - 一个 IM 用户是否能切换不同项目目录？（如 `/project /path/to/repo`）
 - 是否支持多个用户同时使用同一个 Bot？
 - 会话上限和资源管理（同时运行多少个 CLI 子进程？）
-
 ### 10.3 消息体验
-
 - 长回复如何处理？逐段发送 vs 等待完成后发送？
 - 用户快速连发多条消息，是否需要聚合？
 - 代码块在 IM 中的渲染质量（Telegram Markdown vs 飞书富文本 vs 微信纯文本）
-
 ### 10.4 运维
-
 - Adapter 进程管理（systemd / pm2 / Docker？）
 - 日志和监控
 - 服务器重启后 session 恢复
-
 ### 10.5 功能边界
-
 - 是否支持文件/图片上传？（用户在 IM 中发送截图给 Claude）
 - 是否支持 Claude 返回的图片/文件？（如截图、生成的文件）
 - 是否支持 slash commands（`/help`、`/status`、`/new`）？
-
 ---
-
 ## 参考资料
-
 - [OpenClaw GitHub](https://github.com/openclaw/openclaw) — 351k star 开源 AI 助手
 - [OpenClaw China](https://github.com/BytePioneer-AI/openclaw-china) — 中国 IM 社区插件
 - [Channel 系统架构解析](./01-channel-system.md) — 源码 Channel 系统文档
 - [Telegraf](https://github.com/telegraf/telegraf) — Telegram Bot Framework
 - [@larksuiteoapi/node-sdk](https://github.com/larksuite/oapi-sdk-nodejs) — 飞书 SDK
+
