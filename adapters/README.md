@@ -1,6 +1,18 @@
 # Claude Code IM Adapters
 当前目录只放 IM Adapter 运行时代码。
 
+asdas 
+
+asdasdasddasd
+
+asadasdasa
+
+asdasasdasdvfgsdgsdgd
+
+ddfdgfdssgfdgdfgdsgdfgds
+
+asdasad
+
 用户文档已经迁移到 `docs/`，并且以 Desktop Webapp 配置流程为准：
 
 sad卡进度卡德加
