@@ -1,6 +1,6 @@
 # RuleGo
 
-![GoDoc](https://pkg.go.dev/badge/github.com/rulego/rulego) 
+![GoDoc](https://pkg.go.dev/badge/github.com/rulego/rulego){width=21%}
 ![Go Report](https://goreportcard.com/badge/github.com/rulego/rulego)
 ![codecov](https://codecov.io/gh/rulego/rulego/graph/badge.svg?token=G6XCGY7KVN)
 ![test](https://github.com/rulego/rulego/workflows/test/badge.svg)
@@ -164,7 +164,7 @@ The following example defines 3 rule nodes, which are to filter->transform->push
 
 <img src="doc/imgs/rulechain/img_1.png" style="height:50%;width:80%;"/>
 
-Rule chain definition:
+![](doc/imgs/rulechain/img_1.png){width=80%}
 ```json
 {
   "ruleChain": {
@@ -225,17 +225,20 @@ Other rule chain examples:
 
   <img src="doc/imgs/rulechain/img_2.png" style="height:50%;width:80%;">
 
---------
+- Asynchronous + sequential execution:
+  ![](doc/imgs/rulechain/img_2.png){width=80%}
 - Using sub-rule chain method:
 
   <img src="doc/imgs/rulechain/img_3.png" style="height:50%;width:80%;">
 
---------
+- Using sub-rule chain method:
+  ![](doc/imgs/rulechain/img_3.png){width=80%}
 - Some complex examples:
 
   <img src="doc/imgs/rulechain/img_4.png" style="height:50%;width:80%;">
 
---------
+- Some complex examples:
+  ![](doc/imgs/rulechain/img_4.png){width=80%}
 
 ## Data Integration
 
@@ -274,4 +277,4 @@ Any form of contribution is welcome, including submitting issues, suggestions, d
 
 ## License
 
-`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.
+`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.
