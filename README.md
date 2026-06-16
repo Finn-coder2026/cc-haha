@@ -1,6 +1,6 @@
 # RuleGo
 
-![GoDoc](https://pkg.go.dev/badge/github.com/rulego/rulego){width=22%}
+![GoDoc](https://pkg.go.dev/badge/github.com/rulego/rulego){width=38%}
 ![Go Report](https://goreportcard.com/badge/github.com/rulego/rulego)
 ![codecov](https://codecov.io/gh/rulego/rulego/graph/badge.svg?token=G6XCGY7KVN)
 ![test](https://github.com/rulego/rulego/workflows/test/badge.svg)
@@ -277,6 +277,10 @@ Any form of contribution is welcome, including submitting issues, suggestions, d
 
 ## License
 
+`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.
+`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.
+`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.
+`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.
 `RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.
 `RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.
 `RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.`RuleGo` uses Apache 2.0 license, please refer to [LICENSE](LICENSE) file for details.
