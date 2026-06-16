@@ -2,8 +2,8 @@
 
 Follow the repository contract in `AGENTS.md` before editing code.
 
-For every feature or bugfix:
-
+For every feature or bugfix:  
+阿萨德捡垃圾打了看手机32131321
 - Identify the changed surface before coding: `desktop`, `server`, `adapter`, `native`, `docs`, `provider/runtime`, `agent-loop`, or `release`.
 - Add same-area tests with the production change. Do not leave production behavior untested unless the PR explicitly carries the maintainer override `allow-missing-tests`.
 - Preserve or improve the coverage ratchet. New or changed executable production lines must pass the changed-line coverage threshold in `scripts/quality-gate/coverage-thresholds.json`; do not edit coverage baselines or thresholds without maintainer approval via `allow-coverage-baseline-change`.
