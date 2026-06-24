@@ -1,5 +1,7 @@
 # Claude Code Haha Desktop
+汗滴禾下土 水质盘中
 锄禾日当午
+
 基于 Tauri 2 + React 的桌面客户端。
 
 ## 开发
